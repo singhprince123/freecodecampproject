@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Api Project</title>
+</head>
+<body>
+	<div>Result</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+  	$(document).ready( function(){
+  		$.ajax({
+  			url : "https://love-calculator.p.mashape.com/getPercentage?fname='prem'&sname='jheel'",
+  			type: "GET",
+  			success : function(result) {
+  				console.log(result);
+  				alert(JSON.stringify(result));
+  			},
+  			error : function(err) {
+  				alert(JSON.stringify(err));
+  				console.log(err)
+  			},
+  			beforeSend : function(xhr) {
+  				xhr.setRequestHeader('X-Mashape-Key', 'xASJhZvo77mshPBbfd69r2PFg57bp1BDMYgjsnx7z3FHmt9fzs')
+  			}
+  		})
+  	} )
+  </script>
+</body>
+</html>
